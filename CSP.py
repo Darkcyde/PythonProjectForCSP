@@ -1,69 +1,83 @@
 import random
 
-# Fight function to ask for spell and attack enemy
-def Fight():
-    enemyHealth = 10
+score = 0
+
+# Level 1
+
+goblinHealth = 20
+damage = 0
+
+print("A goblin has appeared")
+print("What spell will you use?")
+
+
+# whilst the enemy is alive:
+while goblinHealth > 0:
     
-
-    while enemyHealth > 0:
-        
-        
-        spell = input()
-        if (spell == "Fire" or spell == "fire"):
-            damage = random.randint(1, 5)
-            enemyHealth = enemyHealth - damage
-            print("You did", damage, "damage")
-            print("the enemy has", enemyHealth, "health")
-        else:
-            print("Invalid spell!")
-
-print ('Welcome to my Game!')
-print ('Would you like to start')
-
-userInput = input()
-
-if (userInput == "Yes" or userInput == "yes" or userInput == "YEs"):
-    print("Then let's get started, whats your Username?")
-    name = input()
-    print("Hello, " + name)
-    print("Quick, a goblin has appeared! What spell will you use")
+    spellInput = input()
     
-    enemyHealth = 10
-    
-
-    while enemyHealth > 0:
+    if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
         
-        print("Choose Fire or Ice")
-        
-        spell = input()
-        if (spell == "Fire" or spell == "fire"):
-            damage = random.randint(3, 5)
-            enemyHealth = enemyHealth - damage
-            print("You did", damage, "damage")
-            print("the enemy has", enemyHealth, "health")
+            damage = random.randint(3, 10)
+            goblinHealth = goblinHealth - damage
+            print("You damaged the Goblin for", damage, "damage and it is now", goblinHealth, "health")
             
-        elif (spell == "Ice" or spell == "ice"):
-            damage = random.randint(1, 7)
-            enemyHealth = enemyHealth - damage
-            print("You did", damage, "damage")
-            print("the enemy has", enemyHealth, "health")
-            
-        else:
-            print("Invalid spell!")
+    else:
+        print("Wrong input")
         
-    if (enemyHealth <= 0):
-        print("You killed the witch!")
-        print("Another one appears!")
-        enemyHealth = 15
-        Fight()
-        
-    if (enemyHealth <= 0):
-        print("You killed the goblin!")
-        print("Another one appears!")
-        enemyHealth = 30
-        Fight()
+# When the enemy is dead:
+print("you killed the goblin great job!\n")
+score = score + 1
 
-else:
-    print("Error, Wrong answer")
+
+# Level 2
+witchHealth = 50
+damage = 0
+
+print("A witch has appeared")
+print("What spell will you use?")
+
+# whilst the enemy is alive:
+while witchHealth > 0:
     
-print("Great job, you got a score of", score, "and beat my score")
+    spellInput = input()
+    
+    if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
+        
+            damage = random.randint(10, 30)
+            witchHealth = witchHealth - damage
+            print("You damaged the witch for", damage, "damage and she is now", witchHealth, "health")
+            
+    else:
+        print("That's not a spell!")
+        
+# When the enemy is dead:
+print("You killed the witch, good job!\n")
+score = score + 1
+
+#Level 3 Boss fight
+dragonHealth = 100
+damage = 0
+
+print("The mighty dragon has appeared")
+print("What spell will you use?")
+
+# whilst the enemy is alive:
+while dragonHealth > 0:
+    
+    spellInput = input()
+    
+    if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
+        
+            damage = random.randint(10, 50)
+            dragonHealth = dragonHealth - damage
+            print("You damaged the dragon for", damage, "damage and he is now", dragonHealth, "health")
+            
+    else:
+        print("That's not a spell!")
+        
+# When the enemy is dead:
+print("You killed the Dragon, good job!\n")
+score = score + 1
+
+print("You finished with a score of", score)
