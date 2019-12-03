@@ -1,5 +1,6 @@
 import random
 
+i = 0
 score = 0
 
 # Level 1
@@ -15,15 +16,20 @@ print("What spell will you use?")
 while goblinHealth > 0:
     
     spellInput = input()
+    i += 1
     
-    if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
-        
-            damage = random.randint(3, 10)
-            goblinHealth = goblinHealth - damage
-            print("You damaged the Goblin for", damage, "damage and it is now", goblinHealth, "health")
+    if (i < 10):
+        if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
             
+                damage = random.randint(3, 10)
+                goblinHealth = goblinHealth - damage
+                print("You damaged the Goblin for", damage, "damage and it is now", goblinHealth, "health")
+                
+        else:
+            print("Wrong input")
+    
     else:
-        print("Wrong input")
+        print("You died!")
         
 # When the enemy is dead:
 print("you killed the goblin great job!\n")
@@ -33,6 +39,7 @@ score = score + 1
 # Level 2
 witchHealth = 50
 damage = 0
+i = 0
 
 print("A witch has appeared")
 print("What spell will you use?")
@@ -41,15 +48,20 @@ print("What spell will you use?")
 while witchHealth > 0:
     
     spellInput = input()
+    i += 1
     
-    if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
-        
-            damage = random.randint(10, 30)
-            witchHealth = witchHealth - damage
-            print("You damaged the witch for", damage, "damage and she is now", witchHealth, "health")
+    if (i < 5):
+        if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
+            
+                damage = random.randint(10, 30)
+                witchHealth = witchHealth - damage
+                print("You damaged the witch for", damage, "damage and she is now", witchHealth, "health")
+                
+        else:
+            print("That's not a spell!")
             
     else:
-        print("That's not a spell!")
+        print("You died!")
         
 # When the enemy is dead:
 print("You killed the witch, good job!\n")
@@ -66,18 +78,24 @@ print("What spell will you use?")
 while dragonHealth > 0:
     
     spellInput = input()
+    i += 1
     
-    if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
-        
-            damage = random.randint(10, 50)
-            dragonHealth = dragonHealth - damage
-            print("You damaged the dragon for", damage, "damage and he is now", dragonHealth, "health")
+    if (i < 7):
+        if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
             
+                damage = random.randint(10, 50)
+                dragonHealth = dragonHealth - damage
+                print("You damaged the dragon for", damage, "damage and he is now", dragonHealth, "health")
+                
+        else:
+            print("That's not a spell!")
+    
     else:
-        print("That's not a spell!")
+        print("You died!")
         
 # When the enemy is dead:
 print("You killed the Dragon, good job!\n")
 score = score + 1
 
 print("You finished with a score of", score)
+
