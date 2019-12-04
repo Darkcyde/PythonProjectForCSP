@@ -1,10 +1,6 @@
 import random
 from colorama import Fore, Back, Style 
 
-print(Fore.RED)
-print("---                                  ---")
-print("Health^                              ---")
-
 #On start:
 
 print("What is your favorite color (RGB only :(")
