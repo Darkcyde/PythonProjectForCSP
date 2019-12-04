@@ -1,4 +1,22 @@
 import random
+from colorama import Fore, Back, Style 
+
+print(Fore.RED)
+print("---                                  ---")
+print("Health^                              ---")
+
+#On start:
+
+print("What is your favorite color (RGB only :(")
+color = input()
+
+# Make this a switch statment***
+if (color == "Red" or color == "RED"):
+    print(Fore.RED + "Your text will now be Red!")
+elif (color == "Blue" or color == "BLUE"):
+    print(Fore.BLUE + "Your text will now be Blue!")
+elif (color == "Green" or color == "GREEN"):
+    print(Fore.GREEN + "Your text will now be Green!")
 
 i = 0
 score = 0
@@ -21,10 +39,15 @@ while goblinHealth > 0:
     if (i < 10):
         if (spellInput == "Fire" or spellInput == "fire" or spellInput == "1"):
             
-                damage = random.randint(3, 10)
-                goblinHealth = goblinHealth - damage
-                print("You damaged the Goblin for", damage, "damage and it is now", goblinHealth, "health")
-                
+            damage = random.randint(5, 8)
+            goblinHealth = goblinHealth - damage
+            print("You damaged the Goblin for", damage, "damage and it is now", goblinHealth, "health")
+            
+        elif (spellInput == "Ice" or spellInput == "ice"):
+            damage = random.randint(1, 10)
+            goblinHealth = goblinHealth - damage
+            print("You damaged the Goblin for", damage, "damage and it is now", goblinHealth, "health")
+            
         else:
             print("Wrong input")
     
